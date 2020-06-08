@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title> 位图输出 </title>
+  <style media="screen">
+    body {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  </style>
+</head>
+<body>
+  <canvas id="mc" width="380" height="350" style="border:1px solid black"></canvas>
+  <img id="result" src="" alt="output" crossOrigin="Anonymous"/>
+  <script type="text/javascript">
+    var canvas = document.getElementById('mc');
+    var context = canvas.getContext('2d');
+    context.fillStyle = "#ffffff";
+    context.fillRect(0, 0, 380, 350);
+    context.translate(200, 50);
+    context.fillStyle = 'rgba(255, 0, 0, 0.25)';
+    for (var i = 0; i < 50; i++) {
+      context.translate(25, 25);
+      context.scale(0.95, 0.95);
+      context.rotate(Math.PI/10);
+      context.fillRect(0, 0, 100, 50);
+    }
+    // 使用img元素来显示Canvas的输出结果
+    document.getElementById("result").src = canvas.toDataURL("image/png");
+  </script>
+</body>
+</html>

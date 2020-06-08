@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv = "Content-Type" content = "text/html"; charsert = "utf-8"/>
+  <title> 网页线性渐变色 </title>
+</head>
+<body>
+  <h2> 网页线性渐变色 </h2>
+  <canvas id = "yk" width = "400" height = "300"
+    style = "border:1px solid black"> </canvas>
+  <script languagetype = "text/javascript">
+    var canvas = document.getElementById('yk');
+    var context = canvas.getContext('2d');
+    //创建一个像素为400，从左向右的线性渐变
+    var grad = context.createLinearGradient(0, 0, 400, 0);
+    grad.addColorStop(0, "red");
+    grad.addColorStop(0.5, "pink");
+    grad.addColorStop(1, "yellow");
+    context.fillStyle = grad;
+    context.fillRect(0, 0, 400, 300);
+  </script>
+</body>
+</html>

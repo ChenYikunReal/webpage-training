@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+<style>
+body{background:#000;}
+#c1{ background:#fff;}
+</style>
+<script>
+function d2a(n){
+    return n*Math.PI/180;
+}
+window.onload = function(){
+     var oC = document.getElementById('c1');
+     //1 获取绘图接口
+     var gd = oC.getContext("2d");
+     var cx = 300;
+     var cy = 230;
+     var r = 150;
+     gd.beginPath();
+     gd.moveTo(cx,cy);
+     gd.arc(cx,cy,r,0,d2a(120),false);
+     gd.closePath();
+     gd.fillStyle = "blue";
+     gd.fill();
+     gd.stroke();
+}
+</script>
+</head>
+<body>
+    <canvas id="c1" width="800" height="500"></canvas>
+</body>
+</html>

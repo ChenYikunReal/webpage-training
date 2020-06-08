@@ -1,0 +1,20 @@
+body {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+table {
+  background-color: #003366;
+  width: 400px;
+}
+
+td {
+  background-color: #ffffff;
+  font-family: "楷体_GB2312";
+  font-size: 20pt;
+  text-shadow: -8px 6px 2px #333;
+  text-align: center;
+  color: red;
+}

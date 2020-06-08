@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title> 叠加风格 </title>
+  <style media="screen">
+    body {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  </style>
+</head>
+<body>
+  选择叠加风格：<select style="width:160px" onchange="draw(this.value);">
+    <!--新绘制的图形将会显示在顶层，覆盖以前绘制的图形-->
+    <option value="source-over">source-over</option>
+    <!--只显示新图形与原图形重叠的部分，新图形与原图形的其他部分都变成透明的-->
+    <option value="source-in">source-in</option>
+    <!--只显示新图形与原图形不重叠的部分，新图形与原图形的其他部分都变成透明的-->
+    <option value="source-out">source-out</option>
+    <!--只绘制新图形与原图形重叠部分和原图形未被覆盖的部分，新图形的其他部分变成透明的-->
+    <option value="source-atop">source-atop</option>
+    <!--新绘制的图形将放在原图形的后面-->
+    <option value="destination-over">destination-over</option>
+    <!--只显示原图形与新图形重叠的部分，新图形与原图形的其他部分都变成透明的-->
+    <option value="destination-in">destination-in</option>
+    <!--只显示原图形与新图形不重叠的部分，新图形与原图形的其他部分都变成透明的-->
+    <option value="destination-out">destination-out</option>
+    <!--只绘制原图形与新图形重叠部分和新图形未被覆盖的部分，原图形的其他部分变成透明的，不绘制新图形的重叠部分-->
+    <option value="destination-atop">destination-atop</option>
+    <!--新图形和原图形都绘制，重叠部分绘制两种颜色相加的颜色-->
+    <option value="lighter">lighter</option>
+    <!--绘制新图形与原图形不重叠的部分，重叠部分变成透明的-->
+    <option value="xor">xor</option>
+    <!--只绘制新图形，原图形变成透明的-->
+    <option value="copy">copy</option>
+  </select><br/><br/>
+  <canvas id="mc" width="400" height="200" style="border:1px solid black"></canvas>
+  <script type="text/javascript">
+    var canvas = document.getElementById('mc');
+    // 获取在canvas上绘图的CanvasRenderingContext2D对象
+    var ctx = canvas.getContext('2d');
+    var draw = function(compositeOper) {
+      // 保存当前的绘图状态
+      ctx.save();
+      // 获取canvas元素对应的DOM对象
+      ctx.clearRect(0, 0, 400, 200);
+      // 设置填充颜色为红色
+      ctx.fillStyle = '#ff0000';
+      // 填充一个矩形
+      ctx.fillRect(30, 20, 160, 100);
+      // 设置图形叠加风格
+      ctx.globalCompositeOperation = compositeOper
+      // 设置填充颜色为绿色
+      ctx.fillStyle = '#00ff00';
+      // 填充一个矩形
+      ctx.fillRect(120, 60, 160, 100);
+      // 恢复之前保存的绘图状态
+      ctx.restore();
+    }
+    draw("source-over");
+  </script>
+</body>
+</html>

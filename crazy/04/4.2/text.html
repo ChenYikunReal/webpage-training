@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title> 绘制艺术字 </title>
+</head>
+<body>
+  <canvas id="mc" width="1050" height="130" style="border:1px solid black"></canvas>
+  <script type="text/javascript">
+    // 获取canvas元素对应的DOM对象
+    var canvas = document.getElementById('mc');
+    // 获取在canvas上绘图的CanvasRenderingContext2D对象
+    var ctx = canvas.getContext('2d');
+    ctx.fillStyle = '#b26aff';
+    ctx.font = 'italic bold 25px 楷体';
+    ctx.textBaseline = 'top';
+    // 填充字符串
+    ctx.fillText('德玛西亚是一个实力雄厚、奉公守法的国家，有着功勋卓著的光荣军史。', 0, 0);
+    ctx.strokeStyle = '#ffaf03';
+    ctx.font='bold 30px 仿宋';
+    // 绘制字符串的边框
+    ctx.strokeText('这里非常重视正义、荣耀、职责的意识形态，这里的人民为此感到强烈自豪。', 0, 50);
+    ctx.fillStyle = '#00a802';
+    ctx.font='20px 隶书';
+    ctx.textBaseline = 'bottom';
+    ctx.fillText('德玛西亚是一个自给自足的农耕社会，肥沃的耕地、大片未砍伐的森林、以及矿产储量丰富的山脉遍及全境。', 10, 130);
+  </script>
+</body>
+</html>

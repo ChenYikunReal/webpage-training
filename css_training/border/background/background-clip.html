@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html";charset="utf-8"/>
+    <title>背景属性</title>
+    <style type="text/css">
+      div {
+        border:  10px dotted #444;
+        padding: 12px;
+        height:  30px;
+        width:   300px;
+      }
+    </style>
+  </head>
+  <body>
+    <!--粉色背景-->
+    <div style="background-color:#ff6aa1;">
+      background-color:#ff6aa1
+    </div>
+    <!--以默认样式指定背景图片，将会在横向、纵向上平铺-->
+    <div style="background-image:url(dog.jpg);">
+      background-image:url(dog.jpg)
+    </div>
+    <!--指定背景覆盖盒模型的边框区、内填充区、内容区-->
+    <div style="background-image:url(dog.jpg);background-clip:no-clip;">
+      background-image:url(dog.jpg)
+      background-clip:no-clip
+    </div>
+    <!--指定背景覆盖盒模型的内填充区、内容区-->
+    <div style="background-image:url(dog.jpg);background-clip:padding-box;">
+      background-image:url(dog.jpg)
+      background-clip:padding-box
+    </div>
+    <!--指定背景覆盖盒模型的内容区-->
+    <div style="background-image:url(dog.jpg);background-clip:content-box;">
+      background-image:url(dog.jpg)
+      background-clip:content-box
+    </div>
+  </body>
+</html>

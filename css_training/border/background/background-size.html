@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html";charset="utf-8"/>
+    <title>背景属性</title>
+    <style type="text/css">
+      div {
+        border: 12px dotted #444;
+        height: 70px;
+        width:  300px;
+      }
+    </style>
+  </head>
+  <body>
+    <!--以默认样式指定背景图片，将会在横向、纵向上平铺-->
+    <div style="background-image:url(dog.jpg);">
+      background-image:url(dog.jpg)
+    </div>
+    <!--背景图片宽度与元素宽度相同、高度为元素高度的80%-->
+    <div style="background-image:url(dog.jpg);background-size:100% 80%;">
+      background-image:url(dog.jpg)
+      background-size:100% 80%
+    </div>
+    <!--背景图片宽度为元素宽度的30%、高度保持纵横比缩放-->
+    <div style="background-image:url(dog.jpg);background-size:30% auto">
+      background-image:url(dog.jpg)
+      background-size:30% auto
+    </div>
+    <!--背景图片宽度保持纵横比缩放、高度为元素高度的50%-->
+    <div style="background-image:url(dog.jpg);background-size:auto 50%;">
+      background-image:url(dog.jpg)
+      background-size:auto 50%
+    </div>
+    <!--背景图片宽度为60px、高度为30px-->
+    <div style="background-image:url(dog.jpg);background-size:60px 30px;">
+      background-image:url(dog.jpg)
+      background-size:60px 30px
+    </div>
+    <!--背景图片宽度为40px、高度保持纵横比缩放-->
+    <div style="background-image:url(dog.jpg);background-size:40px auto;">
+      background-image:url(dog.jpg)
+      background-size:40px auto
+    </div>
+    <!--背景图片宽度保持纵横比缩放、高度为20px-->
+    <div style="background-image:url(dog.jpg);background-size:auto 20px;">
+      background-image:url(dog.jpg)
+      background-size:auto 20px
+    </div>
+  </body>
+</html>

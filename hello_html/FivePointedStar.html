@@ -1,0 +1,31 @@
+<html>
+<head>
+  <meta http-equiv = "Content-Type" content = "text/html"; charsert = "utf-8" />
+  <title> 网页五角星 </title>
+</head>
+<body>
+  <h1> 网页五角星 </h1>
+  <canvas id = "yk" width = "500" height = "500"
+    style = "border:1px solid black"> </canvas>
+  <script languagetype = "text/javascript">
+    //通过canvas标签的ID获取canvas对象
+    var canvas = document.getElementById("yk");
+    var context = canvas.getContext("2d");
+    context.beginPath();
+    //设置顶点坐标，根据顶点制定路径
+    for (var i = 0; i < 5; i++) {
+      context.lineTo(Math.cos((18+i*72)/180*Math.PI)*200+200,
+            -Math.sin((18+i*72)/180*Math.PI)*200+200);
+      context.lineTo(Math.cos((54+i*72)/180*Math.PI)*80+200,
+            -Math.sin((54+i*72)/180*Math.PI)*80+200);
+    }
+    context.closePath();
+    //设置边框样式并填充颜色
+    context.lineWidth = "3";
+    context.fillStyle = "red";
+    context.strokeStyle = "green";
+    context.fill();
+    context.stroke();
+  </script>
+</body>
+</html>

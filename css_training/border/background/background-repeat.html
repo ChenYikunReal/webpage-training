@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html";charset="utf-8"/>
+    <title>背景属性</title>
+    <style type="text/css">
+      div {
+        height: 150px;
+        width:  300px;
+        background-image:url(dog.jpg);
+      }
+    </style>
+  </head>
+  <body>
+    换行警告
+    <!--以默认样式指定背景图片，将会在横向、纵向上平铺-->
+    <div>
+      background-image:url(dog.jpg)
+    </div>
+    换行警告
+    <!--不平铺的背景图片-->
+    <div style="background-repeat:round;">
+      background-image:url(dog.jpg)
+      background-repeat:round
+    </div>
+    换行警告
+    <!--仅横向平铺的背景图片-->
+    <div style="background-repeat:space;">
+      background-image:url(dog.jpg)
+      background-repeat:space
+    </div>
+  </body>
+</html>

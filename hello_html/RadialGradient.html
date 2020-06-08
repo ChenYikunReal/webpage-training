@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv = "Content-Type" content = "text/html"; charsert = "utf-8" />
+  <title> 网页径向渐变色 </title>
+</head>
+<body>
+  <h2> 网页径向渐变色 </h2>
+  <canvas id = "yk" width = "400" height = "300"
+    style = "border:1px solid black"> </canvas>
+  <script languagetype = "text/javascript">
+    //径向渐变
+    var canvas = document.getElementById('yk');
+    var context = canvas.getContext('2d');
+    var grad = context.createRadialGradient(200, 0, 100, 200, 300, 100);
+    grad.addColorStop(0, "pink");
+    grad.addColorStop(0.5, "green");
+    grad.addColorStop(1, "pink");
+    context.fillStyle = grad;
+    context.fillRect(0, 0, 400, 300);
+  </script>
+</body>
+</html>

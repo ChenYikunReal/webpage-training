@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv = "content-type" content = "text/html" charset="utf-8"/>
+  <title> Web修饰图片 </title>
+</head>
+<body>
+  <h2> Web修饰图片 </h2>
+  <canvas id = "yk" width = "400" height = "400"
+    style = "border:1px solid black"></canvas>
+  <script languagetype = "text/javascript">
+    window.onload = function() {
+      var picture_c = document.getElementById("yk");
+      var ctx_picture = picture_c.getContext("2d");
+      //页面背景图片
+      var img = new Image();
+      //随便给一张测试图片
+      img.src = "file:///D:/HTML5/beng4.jpg";
+      img.onload = function() {
+        var iw = img.width;
+        var ih = img.height;
+        //设置canvas的宽等于图片宽，这样移动端（比例显示)的图片就能完全显示
+        picture_c.width = iw;
+        picture_c.height = ih;
+        //开始绘制一个新的路径
+        ctx_picture.beginPath();
+        //设置路径起点坐标
+        ctx_picture.moveTo(0, 0);
+        //绘制直线线段到坐标点(60, 50)
+        ctx_picture.lineTo(0, ih);
+        ctx_picture.lineTo(iw, ih);
+        ctx_picture.lineTo(iw, ih*0.1831775700934579);
+        ctx_picture.lineTo(iw*0.8617594254937163, 0);
+        //先关闭绘制路径，注意，此时用直线连接当前端点和起始端点
+        ctx_picture.closePath();
+        //剪切
+        ctx_picture.clip();
+        ctx_picture.drawImage(img, 0, 0, iw, ih, 0, 0, iw, ih);
+      }
+    }
+  </script>
+</body>
+</html>

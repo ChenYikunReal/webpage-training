@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html" charset="utf-8"/>
+    <title>背景属性</title>
+    <style type="text/css">
+      div {
+        border: 1px solid #000;
+        height: 100px;
+        width:  300px;
+      }
+    </style>
+  </head>
+  <body>
+    <!--绿色背景-->
+    <div style="background-color:#92e900;">
+      background-color:#92e900
+    </div>
+    <!--以默认样式指定背景图片，将会在横向、纵向上平铺-->
+    <div style="background-image:url(dog.jpg);">
+      background-image:url(dog.jpg)
+    </div>
+    <!--不平铺的背景图片-->
+    <div style="background-image:url(dog.jpg);background-repeat:no-repeat;">
+      background-image:url(dog.jpg)
+      background-repeat:no-repeat
+    </div>
+    <!--仅横向平铺的背景图片-->
+    <div style="background-image:url(dog.jpg);background-repeat:repeat-x;">
+      background-image:url(dog.jpg)
+      background-repeat:repeat-x
+    </div>
+    <!--不平铺的背景图片，并指定背景图片位置-->
+    <div style="background-image:url(dog.jpg);background-repeat:no-repeat;background-position:35% 80%;">
+      background-image:url(dog.jpg)
+      background-repeat:no-repeat
+      background-position:35% 80%
+    </div>
+    <!--不平铺的背景图片，并指定背景图片位置-->
+    <div style="background-image:url(dog.jpg);background-repeat:no-repeat;background-position:30px 8px;">
+      background-image:url(dog.jpg)
+      background-repeat:no-repeat
+      background-position:30px 8px
+    </div>
+    <!--不平铺的背景图片，并指定背景图片位置-->
+    <div style="background-image:url(dog.jpg);background-repeat:no-repeat;background-position:center bottom;">
+      background-image:url(dog.jpg)
+      background-repeat:no-repeat
+      background-position:center bottom
+    </div>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title> 绘制位图 </title>
+</head>
+<body>
+  <canvas id="mc" width="1250" height="700" style="border:1px solid black"></canvas>
+  <script type="text/javascript">
+    // 获取canvas元素对应的DOM对象
+    var canvas = document.getElementById('mc');
+    // 获取在canvas上绘图的CanvasRenderingContext2D对象
+    var ctx = canvas.getContext('2d');
+    // 创建Image对象
+    var image = new Image();
+    // 指定Image对象装载图片
+    image.src = "cat.jpg";
+    // 当图片装载完成时激发该函数
+    image.onload = function() {
+      // 保持原大小绘制图片
+      ctx.drawImage(image, 20, 10);
+      // 绘制图片时进行缩放
+      ctx.drawImage(image, 700, 10, 100, 100);
+      var sw = 210;
+      var sh = 150;
+      // 从源位图中挖取一块并放大2倍后绘制在Canvas上
+      ctx.drawImage(image, 210, 100, sw, sh, 800, 300, sw*2, sh*2);
+      sw = 210;
+      sh = 200;
+      // 从源位图中挖取一块直接绘制在Canvas上
+      ctx.drawImage(image, 210, 100, sw, sh, 900, 10, sw, sh);
+    }
+  </script>
+</body>
+</html>

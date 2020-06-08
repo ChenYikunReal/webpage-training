@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="author" content="Yeeku.H.Lee(CrazyIt.org)" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title> 绘制凹多边形 </title>
+</head>
+<body>
+  <canvas id="mc" width="460" height="280" style="border:1px solid black"></canvas>
+  <script type="text/javascript">
+    /*
+     * 该方法负责绘制凹多边形
+     * n：该参数应设为奇数，控制绘制N角星
+     * dx、dy：控制N角星的位置
+     * size：控制N角星的大小
+     */
+    function createStar(context, n, dx, dy, size) {
+      // 开始创建路径
+      context.beginPath();
+      var dig = Math.PI/n*4;
+      context.moveTo(dx, size+dy);
+      for (var i = 0; i <= n; i++) {
+        var x = Math.sin(i*dig);
+        var y = Math.cos(i*dig);
+        context.lineTo(x*size+dx, y*size+dy);
+      }
+      context.closePath();
+    }
+    // 获取canvas元素对应的DOM对象
+    var canvas = document.getElementById('mc');
+    // 获取在canvas上绘图的CanvasRenderingContext2D对象
+    var ctx = canvas.getContext('2d');
+    // 绘制凹三边形
+    createStar(ctx, 3, 80, 60, 50);
+    ctx.fillStyle = "#ff310e";
+    ctx.fill();
+    // 绘制凹五边形
+    createStar(ctx, 5, 180, 60, 50);
+    ctx.fillStyle = "#ffb216";
+    ctx.fill();
+    // 绘制凹七边形
+    createStar(ctx, 7, 280, 60, 50);
+    ctx.fillStyle = "#fff92d";
+    ctx.fill();
+    // 绘制凹九边形
+    createStar(ctx, 9, 380, 60, 50);
+    ctx.fillStyle = "#e4ff19";
+    ctx.fill();
+    // 绘制凹十一边形
+    createStar(ctx, 11, 80, 200, 50);
+    ctx.fillStyle = "#55cd00";
+    ctx.fill();
+    // 绘制凹十三边形
+    createStar(ctx, 13, 180, 200, 50);
+    ctx.fillStyle = "#00eb91";
+    ctx.fill();
+    // 绘制凹十五边形
+    createStar(ctx, 15, 280, 200, 50);
+    ctx.fillStyle = "#14d9ff";
+    ctx.fill();
+    // 绘制凹十七边形
+    createStar(ctx, 17, 380, 200, 50);
+    ctx.fillStyle = "#ab49ff";
+    ctx.fill();
+  </script>
+</body>
+</html>

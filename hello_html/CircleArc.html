@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+<style>
+    body{background:#000;}
+    #c1{ background:#fff;}
+</style>
+<script>
+function d2a(n){
+    return n*Math.PI/180;
+}
+window.onload = function(){
+    var oC = document.getElementById("c1");
+    //1 获取绘图接口
+    var　gd = oC.getContext("2d");
+    //arc(x, y, radius, startAngle,endAngle,counterclockwise)
+    //x, y 描述弧的圆形的圆心的坐标。
+    //radius 描述弧的圆形的半径。
+    //startAngle, endAngle 开始和结束的角度
+    //逆时针为TRUE;顺时针为false
+    gd.arc(200,200,150,d2a(0),d2a(60),false);
+    gd.stroke();
+};
+</script>
+</head>
+<body>
+    <canvas id="c1" width="800" height="500"></canvas>
+</body>
+</html>

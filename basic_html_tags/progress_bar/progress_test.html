@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>10秒下载进度条</title>
+</head>
+<body>
+    <p>下载进度：</p>
+    <script type="text/javascript">
+        window.onload = function() {
+            let bar = document.getElementById("bar");
+            let i = 1;
+            let timer = setInterval(function () {
+                bar.value = i;
+                bar.title = i + "%";
+                if (i > 100) {
+                    clearInterval(timer);
+                    alert("下载完成")
+                } else {
+                    i++;
+                }
+            }, 50);
+        }
+    </script>
+    <progress id="bar" value="0" min="0" max="100" title="0%"></progress><br />
+    <!--<p><b>说明：</b>Internet Explorer 不支持 progress 标签。</p>-->
+</body>
+</html>
