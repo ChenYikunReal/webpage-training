@@ -1,5 +1,10 @@
 ﻿# 简单网页开发训练
 
+- IDE：WebStorm
+- 内容：基本的Web前端开发训练
+
+## 目录结构说明
+
 - basic_html_tags ：HTML基本标签使用
 - brython_test ：Brython库的使用
 - center_display ：网页全屏和居中功能
