@@ -1,6 +1,6 @@
 ﻿# 简单网页开发训练
 
-- IDE：WebStorm
+- Editor：Atom->WebStorm
 - 内容：基本的Web前端开发训练
 
 ## 目录结构说明
