@@ -11,6 +11,7 @@
 - crazy_code : 《疯狂HTML5+CSS3+JavaScript讲义》配书代码
 - css_lib : CSS库积累
 - css_training : CSS使用训练
+- echarts_test : Echarts库的使用练习
 - font_awesome : 图标字体库和CSS框架FontAwesome使用
 - google_map : 地图接口使用
 - hello_html : HTML入门代码
