@@ -5,12 +5,16 @@
 ![](echarts-images.png)
 
 ## ECharts样式设置官网
-[官网链接](https://echarts.apache.org/zh/theme-builder.html)
+- [官网主题](https://echarts.apache.org/zh/theme-builder.html)
+- [官网样例](https://echarts.apache.org/examples/zh/index.html)
 
 ### 官网样例
 ![](官网Demo1.png)<br/>
 ![](官网Demo2.png)<br/>
 ![](官网Demo3.png)
+
+## ECharts教程
+- [ECharts教程](https://info.swufe.edu.cn/netinfo/echarts/index.html)
 
 ## ECharts基本配置流程
 
